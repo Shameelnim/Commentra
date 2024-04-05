@@ -1,13 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static "css/style.css" %}" />
 	<title>Commentra</title>
 </head>
 <body>
 	<h1>Welcome to Commentra</h1>
 
-	
+	<div class="comments">
+		{% for comment in comments %}
+		  <div class="comment">
+
+			<h4>{{comment.name}}</h4>
+			<img src="{{comment.img.url}}" alt="The image is loading" onerror="alert('Sorry')" />
+			<h3>{{comment.title}}</h3>
+			<p>{{comment.body}}</p>
+			<p>{{comment.date_posted}}</p>
+			</div>  
+		{%endfor%}
+
+	</div>
 </body>
 </html>
