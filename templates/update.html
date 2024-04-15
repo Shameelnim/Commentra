@@ -1,0 +1,10 @@
+<title>Update the {{comments.title}}</title>
+
+
+<form method="POST">
+	{%csrf_token%}
+	
+<input type="text" name="title" value="{{comments.title}}">
+<textarea name="body" id="" cols="30" rows="10" >{{comments.body}}</textarea>
+<button>Submit</button>
+</form>

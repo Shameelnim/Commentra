@@ -67,3 +67,7 @@ body, h1, h3, h4, p {
 	 /* Adjust this value as needed */
 }
   
+
+.comment a{
+	text-decoration: none;
+}

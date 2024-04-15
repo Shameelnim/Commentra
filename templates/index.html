@@ -9,19 +9,57 @@
 </head>
 <body>
 	<h1>Welcome to Commentra</h1>
+	<nav>
+{%if user.is_authenticated%}
+		<a href="/">Welcome {{user.username}}</a>
+		<a href="add">Add Comment</a>
+		<a href="logout">logout</a>
+		{%else%}
+		<a href="login">Login</a>
+		<a href="register">Register</a>
+		{%endif%}
+	</nav>
 
 	<div class="comments">
 		{% for comment in comments %}
-		  <div class="comment">
+		  <div  class="comment">
+		  <a href="view/{{comment.title}}" title="view the comment {{comment.title}}" />
 
 			<h4>{{comment.name}}</h4>
 			<img src="{{comment.img.url}}" alt="The image is loading" onerror="alert('Sorry')" />
 			<h3>{{comment.title}}</h3>
-			<p>{{comment.body}}</p>
-			<p>{{comment.date_posted}}</p>
+			<p>{{comment.body|truncatewords:2}}</p>
+			<p>{{comment.date}}</p>
+			{%if user.username == comment.name%}
+			<a href="update/{{comment.title}}">Update</a>
+			<a href="delete/{{comment.title}}">Delete</a>
+			{%endif%}
+	</a>
 			</div>  
 		{%endfor%}
 
 	</div>
+	{% comment %} I am Shameel Intructor of this course thank you for watching the video  {% endcomment %}
+
+	{% comment %} Simple quoate that makes you powerfull {% endcomment %}
+
+	{% comment %} This coding is written by Shameel {% endcomment %}
+
+	{% comment %} You can code like me  {% endcomment %}
+
+	{% comment %} after lots of trouble i made this project  {% endcomment %}
+
+	{% comment %} Coding is fun just code bro  {% endcomment %}
+
+	{% comment %} You Can Code Like Me  {% endcomment %}
+
+	{% comment %} After you finished this course {% endcomment %}
+
+	{% comment %} Become a master is not possbile in 2 or 3 days {% endcomment %}
+
+	{% comment %} You need to work hard build projects like this in your App or Web Development field {% endcomment %}
+
+	{% comment %} Thank you for get the source code and watch the video {% endcomment %}
 </body>
+
 </html>
