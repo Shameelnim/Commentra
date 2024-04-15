@@ -79,7 +79,6 @@ def update(request,pk):
 		posts.save()
 		return redirect('/')
 
-
 	return render(request,"update.html",{'comments':posts})
 
 
