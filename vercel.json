@@ -1,8 +1,0 @@
-{
-	"routes": [
-	  {
-		"src": "/(.*)",
-		"dest": "commentra_project/wsgi.py"
-	  }
-	]
-  }
